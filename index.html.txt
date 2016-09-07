@@ -3,29 +3,41 @@
  <head>
   <link rel="stylesheet" type="text/css" href="">
   <link rel="shorcut icon" type="image/x-icon" class="img" href="../imagenes/favicon.ico">
-  <title>Formulario Basico con html y css</title>
+  <title>Formulario Basico - Restriccion</title>
  </head>
 
  <body>
-  <div class="contenedor">
-   <fieldset><legend>Formulario</legend>
-    <form>
-     <!---->
-     <label for="nombre">Nombre:</label>
-     <!---->
-     <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre">
-
-     <label for="email">Email:</label>
-
-     <input type="email" id="email" name="email" placeholder="Escribe tu email">
-
-     <label for="mensaje">mensaje:</label>
-     <!---->
-     <textarea type="mensaje" id="mensaje" name="mensaje" placeholder="Escribe tu mensaje"></textarea>
-
-     <input type="submit" value="Enviar">  
-    </form>
-   </fieldset> 
-  </div> 
+  <center><script language="javascript">
+function comprobar()
+{
+   var nombre = document.formu.nombre.value;
+   var edad = document.formu.edad.value;
+ 
+   if (nombre.length > 30)
+   {
+      alert("Tu nombre es demasiado grande. Redúcelo.");
+      return false;
+   }
+   
+   if (edad >= 1 && edad <= 15)
+   {
+      alert("esta pagina es acta solo para mayores de edad.");
+      return false;
+   }
+   
+   return true;
+}
+</script>
+<form action="http://vimaraga.webs.tl" method="post" name="formu" id="formu" onsubmit="return comprobar()">
+    <div style="text-align: left;">                            <br />
+                                      <img src="http://t1.gstatic.com/images?q=tbn:ANd9GcTUeoS5awp7qLtOjSwZFr-LcoVkS40DKuncGjoPRpyE73DZVfsHRg" alt="" /><br />
+                     </div>
+    <h3 style="color: red;">    INGRESA LOS DATOS PARA ENTRAR A LA PAGINA                  </h3>
+    <div style="text-align: left;"><br />
+                                  <span style="color: rgb(255, 0, 0);"> Tu nombre: <input type="text" name="nombre" value="" /></span></div>
+    <div style="text-align: left;"><span style="color: rgb(255, 0, 0);">                                   Tu edad:</span>              <input type="text" name="edad" value="" size="2" maxlength="2" /></div>
+    <div style="text-align: left;">                                                           <input type="submit" value="   Enviar   " /></div>
+</form>
+</center><br />
  </body>
 </html>
